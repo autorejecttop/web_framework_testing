@@ -6,6 +6,7 @@ import Clock from "./passing_props/Clock";
 import Button from "./adding_interactivity/Events";
 import Gallery from "./state/Gallery";
 import Example from "./reducer/Example";
+import Page from "./context/Page";
 
 const colors = ["lightcoral", "midnightblue", "rebeccapurple"];
 
@@ -41,4 +42,5 @@ export const App = () => {
   // );
 
   // return <Example />;
+  return <Page />;
 };
