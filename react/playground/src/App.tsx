@@ -7,6 +7,7 @@ import Button from "./adding_interactivity/Events";
 import Gallery from "./state/Gallery";
 import Example from "./reducer/Example";
 import Page from "./context/Page";
+import TaskApp from "./reducer_with_context/App";
 
 const colors = ["lightcoral", "midnightblue", "rebeccapurple"];
 
@@ -42,5 +43,5 @@ export const App = () => {
   // );
 
   // return <Example />;
-  return <Page />;
+  return <TaskApp />;
 };
