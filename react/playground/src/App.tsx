@@ -8,6 +8,7 @@ import Gallery from "./state/Gallery";
 import Example from "./reducer/Example";
 import Page from "./context/Page";
 import TaskApp from "./reducer_with_context/App";
+import Ref from "./refs/Ref";
 
 const colors = ["lightcoral", "midnightblue", "rebeccapurple"];
 
@@ -43,5 +44,6 @@ export const App = () => {
   // );
 
   // return <Example />;
-  return <TaskApp />;
+  // return <TaskApp />;
+  return <Ref />;
 };
