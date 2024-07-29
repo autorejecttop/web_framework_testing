@@ -9,6 +9,7 @@ import Example from "./reducer/Example";
 import Page from "./context/Page";
 import TaskApp from "./reducer_with_context/App";
 import Ref from "./refs/Ref";
+import Effect from "./effects/Effect";
 
 const colors = ["lightcoral", "midnightblue", "rebeccapurple"];
 
@@ -45,5 +46,6 @@ export const App = () => {
 
   // return <Example />;
   // return <TaskApp />;
-  return <Ref />;
+  // return <Ref />;
+  return <Effect />;
 };
