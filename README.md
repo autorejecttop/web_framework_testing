@@ -15,4 +15,4 @@ This repository is for my personal testing of web frameworks and JS ecosystem.
 ### Just for the luls
 - SolidJS. kinda liked how it feels like React but less bloat. Kinda felt like using a simple JavaScript wrapper for declarative UI.
 - Astro. kinda liked how it's very barebones, even though a lot of people don't use this.
-- <canvas> and JS optimization. I'm very curious on the performance of using <canvas> as a renderer rather than DOM and also doing some very niche stuff like Map, Set, or even some unknown JS APIs that people don't hear often.
+- <canvas> and JS optimization. I'm very curious on the performance of using \<canvas\> as a renderer rather than DOM and also doing some very niche stuff like Map, Set, or even some unknown JS APIs that people don't hear often.
