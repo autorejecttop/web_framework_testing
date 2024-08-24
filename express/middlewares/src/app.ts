@@ -1,86 +1,116 @@
-import express, {
-  type ErrorRequestHandler,
-  type NextFunction,
-  type Request,
-  type Response,
-} from "express";
-import cookieParser from "cookie-parser";
+// import express, {
+//   type ErrorRequestHandler,
+//   type NextFunction,
+//   type Request,
+//   type Response,
+// } from "express";
+// const app = express();
 
+// app.use(function handleRequest(_req, _res, next) {
+//   console.log(`Time: ${Date.now()}`);
+//   next();
+// });
+
+// app.use(
+//   "/user/:id",
+//   function handleOneUserRequest(req, _res, next) {
+//     console.log(`Request URL: ${req.originalUrl}`);
+//     next();
+//   },
+//   function handleOneUserRequest(req, _res, next) {
+//     console.log(`Request Type: ${req.method}`);
+//     next();
+//   }
+// );
+
+// app.get(
+//   "/user/:id",
+//   function handleOneUserRequest(req, _res, next) {
+//     // res.send(`User ID: ${req.params.id}`);
+//     if (req.params.id === "0") {
+//       next("route");
+//     } else {
+//       next();
+//     }
+//   },
+//   function handleOneUserRequest(_req, res) {
+//     res.send("regular");
+//   }
+// );
+
+// app.get("/user/:id", function handleOneUserRequest(_req, res) {
+//   res.send("special");
+// });
+
+// app.use(function handleNotFound(_req: Request, res: Response) {
+//   res.sendStatus(404);
+// });
+
+// app.use(function handleError(
+//   err: ErrorRequestHandler,
+//   _req: Request,
+//   res: Response,
+//   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+//   _next: NextFunction
+// ) {
+//   console.error(err);
+//   res.sendStatus(500);
+// });
+
+// export default app;
+
+import express from "express";
 const app = express();
+const router = express.Router();
 
-function myLogger(req: Request, _res: Response, next: NextFunction) {
-  console.log("LOGGED");
-  console.log(req.ip);
-
+router.use((req, _res, next) => {
+  if (!req.headers["x-auth"]) return next("router");
   next();
-}
-app.use(myLogger);
+});
 
-function requestTime(req: Request, _res: Response, next: NextFunction) {
-  req.requestTime = Date.now();
+// a middleware function with no mount path. This code is executed for every request to the router
+router.use((_req, _res, next) => {
+  console.log("Time:", Date.now());
   next();
-}
-app.use(requestTime);
+});
 
-function cookieValidator(cookies: unknown) {
-  try {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log(cookies);
-        resolve(cookies);
-      }, 500);
-    });
-  } catch (error) {
-    console.error(error);
-    throw new Error("Invalid cookies");
-  }
-}
-
-async function validateCookies(
-  req: Request,
-  _res: Response,
-  next: NextFunction
-) {
-  await cookieValidator(req.cookies);
-  next();
-}
-app.use(cookieParser());
-app.use(validateCookies);
-
-function optionsMiddleware(options: unknown) {
-  return function (_req: Request, _res: Response, next: NextFunction) {
-    if (options && typeof options === "object" && "lol" in options) {
-      console.log(options.lol);
-    }
-
+// a middleware sub-stack shows request info for any type of HTTP request to the /user/:id path
+router.use(
+  "/user/:id",
+  (req, _res, next) => {
+    console.log("Request URL:", req.originalUrl);
     next();
-  };
-}
-app.use(optionsMiddleware({ lol: "lol" }));
+  },
+  (req, _res, next) => {
+    console.log("Request Type:", req.method);
+    next();
+  }
+);
 
-app.get("/", function rootHandler(req, res) {
-  let responseText = "Hello World!<br>";
-  responseText += `<small>Requested at: ${req.requestTime}</small>`;
+// a middleware sub-stack that handles GET requests to the /user/:id path
+router.get(
+  "/user/:id",
+  (req, _res, next) => {
+    // if the user ID is 0, skip to the next router
+    if (req.params.id === "0") next("route");
+    // otherwise pass control to the next middleware function in this stack
+    else next();
+  },
+  (_req, res) => {
+    // send a regular page
+    res.send("regular");
+  }
+);
 
-  // throw new Error();
-  res.send(responseText);
+// handler for the /user/:id path, which sends a special page
+router.get("/user/:id", (req, res) => {
+  console.log(req.params.id);
+  res.send("special");
 });
 
-app.use(function notFoundMiddleware(_req, res) {
-  // throw new Error("Lol");
-  res.sendStatus(404);
-});
-
-app.use(function errorHandlerMiddleware(
-  err: ErrorRequestHandler,
-  _req: Request,
-  res: Response,
-  next: NextFunction
-) {
-  console.error(err);
-  res.sendStatus(500);
-
-  next();
+// mount the router on the app
+app.use("/admin", router, (_req, res) => {
+  res.sendStatus(401);
 });
 
 export default app;
