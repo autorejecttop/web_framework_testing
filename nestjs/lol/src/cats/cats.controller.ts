@@ -32,7 +32,7 @@ import {
   CreateCatDto,
   // createCatSchema
 } from './dto/create-cat.dto';
-import { ValidationPipe } from 'src/pipes/validation.pipe';
+// import { ValidationPipe } from 'src/pipes/validation.pipe';
 import { ParseIntPipe } from 'src/pipes/parse-int.pipe';
 import { RolesGuard } from 'src/guards/roles.guard';
 import { Roles } from 'src/decorators/roles.decorator';
@@ -42,6 +42,8 @@ import { ExcludeNullInterceptor } from 'src/interceptors/exclude-null.intercepto
 import { ErrorsInterceptor } from 'src/interceptors/errors.interceptor';
 import { TimeoutInterceptor } from 'src/interceptors/timeout.interceptor';
 import { CacheInterceptor } from 'src/interceptors/cache.interceptor';
+import { User } from 'src/decorators/user.decorator';
+import { ValidationPipe } from '@nestjs/common';
 // import { ForbiddenException } from 'src/forbidden.exception';
 // import { HttpExceptionFilter } from 'src/http-exception.filter';
 
@@ -117,6 +119,9 @@ export class CatsController {
 
   @Get(':id')
   findOne(
+    // @User() user: UserEntity,
+    // @User('firstName') firstName: string,
+    @User(new ValidationPipe({ validateCustomDecorators: true }))
     @Param(
       'id',
       ParseIntPipe,
