@@ -5,6 +5,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AddingEventListenersComponent } from './adding-event-listeners/adding-event-listeners.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { ControlFlowComponent } from './control-flow/control-flow.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { ControlFlowComponent } from './control-flow/control-flow.component';
     AddingEventListenersComponent,
     TwoWayBindingComponent,
     ControlFlowComponent,
+    PipesComponent,
   ],
   // templateUrl: './app.component.html',
   template: `
@@ -44,7 +46,9 @@ import { ControlFlowComponent } from './control-flow/control-flow.component';
     <!-- <h1>Counter: {{ initialCount }}</h1>
     <app-two-way-binding [(count)]="initialCount" /> -->
 
-    <app-control-flow />
+    <!-- <app-control-flow /> -->
+
+    <app-pipes />
   `,
   styleUrl: './app.component.scss',
 })
