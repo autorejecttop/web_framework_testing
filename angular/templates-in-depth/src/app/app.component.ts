@@ -2,17 +2,23 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AddingEventListenersComponent } from './adding-event-listeners/adding-event-listeners.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgOptimizedImage, UserProfileComponent],
+  imports: [
+    RouterOutlet,
+    NgOptimizedImage,
+    UserProfileComponent,
+    AddingEventListenersComponent,
+  ],
   // templateUrl: './app.component.html',
   template: `
-    <p>Your color preference is {{ theme }}.</p>
-    <button style="display: block;" [disabled]="!isFormValid">Save</button>
+    <!-- <p>Your color preference is {{ theme }}.</p>
+    <button style="display: block;" [disabled]="!isFormValid">Save</button> -->
     <!-- <my-listbox [value]="mySelection" /> -->
-    <img
+    <!-- <img
       [ngSrc]="profilePhotoUrl"
       alt="The current user's profile photo"
       width="200"
@@ -27,8 +33,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     >
       Save changes
     </button>
-    <hr />
-    <app-user-profile />
+    <hr /> -->
+    <!-- <app-user-profile /> -->
+    <app-adding-event-listeners />
   `,
   styleUrl: './app.component.scss',
 })
