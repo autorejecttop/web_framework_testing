@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AddingEventListenersComponent } from './adding-event-listeners/adding-event-listeners.component';
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { AddingEventListenersComponent } from './adding-event-listeners/adding-e
     NgOptimizedImage,
     UserProfileComponent,
     AddingEventListenersComponent,
+    TwoWayBindingComponent,
   ],
   // templateUrl: './app.component.html',
   template: `
@@ -35,21 +37,26 @@ import { AddingEventListenersComponent } from './adding-event-listeners/adding-e
     </button>
     <hr /> -->
     <!-- <app-user-profile /> -->
-    <app-adding-event-listeners />
+    <!-- <app-adding-event-listeners /> -->
+
+    <h1>Counter: {{ initialCount }}</h1>
+    <app-two-way-binding [(count)]="initialCount" />
   `,
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
-  title = 'templates-in-depth';
-  theme = Math.random() > 0.5 ? 'dark' : 'light';
-  isFormValid = Math.random() > 0.5 ? true : false;
+export class AppComponent {
+  // title = 'templates-in-depth';
+  // theme = Math.random() > 0.5 ? 'dark' : 'light';
+  // isFormValid = Math.random() > 0.5 ? true : false;
   // mySelection = Math.random() > 0.5 ? 'a' : 'b';
-  profilePhotoUrl = 'https://picsum.photos/200';
-  listRole = '';
-  firstName = 'Rafli';
-  objectType = 'database';
+  // profilePhotoUrl = 'https://picsum.photos/200';
+  // listRole = '';
+  // firstName = 'Rafli';
+  // objectType = 'database';
 
-  ngOnInit(): void {
-    console.log(this.isFormValid);
-  }
+  // ngOnInit(): void {
+  //   console.log(this.isFormValid);
+  // }
+
+  initialCount = 10;
 }
