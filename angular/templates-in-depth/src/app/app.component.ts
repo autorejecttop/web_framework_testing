@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AddingEventListenersComponent } from './adding-event-listeners/adding-event-listeners.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { ControlFlowComponent } from './control-flow/control-flow.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
     UserProfileComponent,
     AddingEventListenersComponent,
     TwoWayBindingComponent,
+    ControlFlowComponent,
   ],
   // templateUrl: './app.component.html',
   template: `
@@ -39,8 +41,10 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
     <!-- <app-user-profile /> -->
     <!-- <app-adding-event-listeners /> -->
 
-    <h1>Counter: {{ initialCount }}</h1>
-    <app-two-way-binding [(count)]="initialCount" />
+    <!-- <h1>Counter: {{ initialCount }}</h1>
+    <app-two-way-binding [(count)]="initialCount" /> -->
+
+    <app-control-flow />
   `,
   styleUrl: './app.component.scss',
 })
