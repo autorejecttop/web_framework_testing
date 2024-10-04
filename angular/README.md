@@ -10,7 +10,7 @@ A framework developed by Google for building web apps.
 - [x] Components in-depth
 - [ ] Templates in-depth
 - [ ] Performance in-depth
-- [ ] Experimental features in-depth (Zoneless, which makes Angular significantly [more performant](https://krausest.github.io/js-framework-benchmark/))
+- [x] Experimental features in-depth (Zoneless, which makes Angular significantly [more performant](https://krausest.github.io/js-framework-benchmark/))
 - [ ] Style guide best practices
 - [ ] Security best practices
 - [ ] Performance best practices
