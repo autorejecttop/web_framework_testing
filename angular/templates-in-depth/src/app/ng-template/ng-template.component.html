@@ -1,0 +1,16 @@
+<p>This is a normal element</p>
+<button (click)="handleClick()">Add</button>
+
+<ng-template #templateFragment>
+  <p>This is a template fragment</p>
+</ng-template>
+
+<ng-template #countFragment>
+  <p>You've selected {{ count }} items.</p>
+</ng-template>
+
+@if (count > 0) {
+<ng-container [ngTemplateOutlet]="countFragment"></ng-container>
+} @if (count <= 0) {
+<ng-container [ngTemplateOutlet]="templateFragment"></ng-container>
+}

@@ -7,6 +7,7 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
 import { ControlFlowComponent } from './control-flow/control-flow.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
+import { NgTemplateComponent } from './ng-template/ng-template.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { NgContentComponent } from './ng-content/ng-content.component';
     // TwoWayBindingComponent,
     // ControlFlowComponent,
     // PipesComponent,
-    NgContentComponent,
+    // NgContentComponent,
+    NgTemplateComponent,
   ],
   // templateUrl: './app.component.html',
   template: `
@@ -52,7 +54,9 @@ import { NgContentComponent } from './ng-content/ng-content.component';
 
     <!-- <app-pipes /> -->
 
-    <button baseButton>Lol</button>
+    <!-- <button baseButton>Lol</button> -->
+
+    <app-ng-template />
   `,
   styleUrl: './app.component.scss',
 })
