@@ -1,0 +1,84 @@
+<div>
+  <h1>on idle</h1>
+  @defer (on idle) {
+  <img ngSrc="https://picsum.photos/200/200" fill alt="Picsum Photo" />
+  } @placeholder (minimum 1s) {
+  <p>Your component should load here...</p>
+  } @loading (after 100ms; minimum 1s) {
+  <p>Loading the component...</p>
+  } @error {
+  <p>Failed to load component.</p>
+  }
+</div>
+<div>
+  <h1>on viewport</h1>
+  @defer (on viewport) {
+  <img ngSrc="https://picsum.photos/200/200" fill alt="Picsum Photo" />
+  } @placeholder (minimum 1s) {
+  <p>Your component should load here...</p>
+  } @loading (after 100ms; minimum 1s) {
+  <p>Loading the component...</p>
+  } @error {
+  <p>Failed to load component.</p>
+  }
+</div>
+<div>
+  <h1>on interaction</h1>
+  @defer (on interaction; prefetch on hover) {
+  <img ngSrc="https://picsum.photos/200/200" fill alt="Picsum Photo" />
+  } @placeholder (minimum 1s) {
+  <p>Your component should load here...</p>
+  } @loading (after 100ms; minimum 1s) {
+  <p>Loading the component...</p>
+  } @error {
+  <p>Failed to load component.</p>
+  }
+</div>
+<div>
+  <h1>on hover</h1>
+  @defer (on hover) {
+  <img ngSrc="https://picsum.photos/200/200" fill alt="Picsum Photo" />
+  } @placeholder (minimum 1s) {
+  <p>Your component should load here...</p>
+  } @loading (after 100ms; minimum 1s) {
+  <p>Loading the component...</p>
+  } @error {
+  <p>Failed to load component.</p>
+  }
+</div>
+<div>
+  <h1>on immediate</h1>
+  @defer (on immediate) {
+  <img ngSrc="https://picsum.photos/200/200" fill alt="Picsum Photo" />
+  } @placeholder (minimum 1s) {
+  <p>Your component should load here...</p>
+  } @loading (after 100ms; minimum 1s) {
+  <p>Loading the component...</p>
+  } @error {
+  <p>Failed to load component.</p>
+  }
+</div>
+<div>
+  <h1>on timer</h1>
+  @defer (on timer(3s)) {
+  <img ngSrc="https://picsum.photos/200/200" fill alt="Picsum Photo" />
+  } @placeholder (minimum 1s) {
+  <p>Your component should load here...</p>
+  } @loading (after 100ms; minimum 1s) {
+  <p>Loading the component...</p>
+  } @error {
+  <p>Failed to load component.</p>
+  }
+</div>
+<div>
+  <h1>when condition</h1>
+  @defer (when !loading) {
+  <img ngSrc="https://picsum.photos/200/200" fill alt="Picsum Photo" />
+  } @placeholder (minimum 1s) {
+  <p>Your component should load here...</p>
+  } @loading (after 100ms; minimum 1s) {
+  <p>Loading the component...</p>
+  } @error {
+  <p>Failed to load component.</p>
+  }
+</div>

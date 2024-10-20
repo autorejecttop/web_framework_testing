@@ -8,6 +8,7 @@ import { ControlFlowComponent } from './control-flow/control-flow.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
 import { NgTemplateComponent } from './ng-template/ng-template.component';
+import { DeferComponent } from './defer/defer.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { NgTemplateComponent } from './ng-template/ng-template.component';
     // PipesComponent,
     // NgContentComponent,
     NgTemplateComponent,
+    DeferComponent,
   ],
   // templateUrl: './app.component.html',
   template: `
@@ -56,7 +58,9 @@ import { NgTemplateComponent } from './ng-template/ng-template.component';
 
     <!-- <button baseButton>Lol</button> -->
 
-    <app-ng-template />
+    <!-- <app-ng-template /> -->
+
+    <app-defer />
   `,
   styleUrl: './app.component.scss',
 })
