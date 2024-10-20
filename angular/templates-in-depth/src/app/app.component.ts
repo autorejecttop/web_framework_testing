@@ -6,18 +6,20 @@ import { AddingEventListenersComponent } from './adding-event-listeners/adding-e
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { ControlFlowComponent } from './control-flow/control-flow.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { NgContentComponent } from './ng-content/ng-content.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    NgOptimizedImage,
-    UserProfileComponent,
-    AddingEventListenersComponent,
-    TwoWayBindingComponent,
-    ControlFlowComponent,
-    PipesComponent,
+    // NgOptimizedImage,
+    // UserProfileComponent,
+    // AddingEventListenersComponent,
+    // TwoWayBindingComponent,
+    // ControlFlowComponent,
+    // PipesComponent,
+    NgContentComponent,
   ],
   // templateUrl: './app.component.html',
   template: `
@@ -48,7 +50,9 @@ import { PipesComponent } from './pipes/pipes.component';
 
     <!-- <app-control-flow /> -->
 
-    <app-pipes />
+    <!-- <app-pipes /> -->
+
+    <button baseButton>Lol</button>
   `,
   styleUrl: './app.component.scss',
 })
