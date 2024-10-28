@@ -16,5 +16,5 @@ A framework developed by Google for building web apps.
 - [ ] Security best practices
 - [x] Performance best practices
 - [ ] Service Workers & PWAs
-- [ ] Web workers
+- [x] Web workers
 - [ ] Angular CDK/Material
