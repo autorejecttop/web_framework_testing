@@ -1,0 +1,38 @@
+<img ngSrc="https://picsum.photos/1920/1080" fill alt="" priority />
+
+<!-- Must have loader (use Cloudflare's) -->
+<!-- <img
+  ngSrc="https://picsum.photos/1920/1080"
+  width="1920"
+  height="1080"
+  alt=""
+  priority
+  placeholder
+/> -->
+
+<!-- You can use Base64 as a placeholder -->
+<!-- <img 
+  ngSrc="cat.jpg" 
+  width="400" 
+  height="200" 
+  placeholder="data:image/png;base64,iVBORw0K..."
+/> -->
+
+<!-- Placeholder is blurred by default -->
+<!-- <img
+  ngSrc="cat.jpg"
+  width="400"
+  height="200"
+  placeholder
+  [placeholderConfig]="{ blur: false }"
+/> -->
+
+<!-- Placeholder is blurred by default -->
+<!-- <img
+  ngSrc="cat.jpg"
+  width="400"
+  height="200"
+  sizes="((min-width: 50em) and (max-width: 60em)) 50em,
+              ((min-width: 30em) and (max-width: 50em)) 30em,
+              (max-width: 30em) 20em"
+/> -->
