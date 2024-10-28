@@ -8,7 +8,7 @@ A framework developed by Google for building web apps.
 - [x] Interactive tutorial
 - [x] YouTube tutorial
 - [x] Components in-depth
-- [ ] Templates in-depth
+- [x] Templates in-depth
 - [ ] Performance in-depth
 - [x] Experimental features in-depth (Zoneless, which makes Angular significantly [more performant](https://krausest.github.io/js-framework-benchmark/))
 - [ ] Style guide best practices

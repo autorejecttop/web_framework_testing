@@ -9,9 +9,11 @@ import { PipesComponent } from './pipes/pipes.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
 import { NgTemplateComponent } from './ng-template/ng-template.component';
 import { DeferComponent } from './defer/defer.component';
+import { WhitespacesComponent } from './whitespaces/whitespaces.component';
 
 @Component({
   selector: 'app-root',
+  // preserveWhitespaces: true,
   standalone: true,
   imports: [
     RouterOutlet,
@@ -24,6 +26,7 @@ import { DeferComponent } from './defer/defer.component';
     // NgContentComponent,
     NgTemplateComponent,
     DeferComponent,
+    WhitespacesComponent,
   ],
   // templateUrl: './app.component.html',
   template: `
@@ -60,7 +63,9 @@ import { DeferComponent } from './defer/defer.component';
 
     <!-- <app-ng-template /> -->
 
-    <app-defer />
+    <!-- <app-defer /> -->
+
+    <app-whitespaces />
   `,
   styleUrl: './app.component.scss',
 })
